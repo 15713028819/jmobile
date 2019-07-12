@@ -1,5 +1,4 @@
 import Taro from '@tarojs/taro';
-import { notProd } from './assertionEnv';
 
 /**
  * 在控制台输出普通信息
@@ -8,7 +7,7 @@ import { notProd } from './assertionEnv';
  * @return {Void}
  */
 export function log(...params: any[]): void {
-    if (notProd()) {
+    if (process.env.NODE_ENV !== 'production') {
         console.log(...params);
     }
 }
@@ -20,7 +19,7 @@ export function log(...params: any[]): void {
  * @return {Void}
  */
 export function warn(...params: any[]): void {
-    if (notProd()) {
+    if (process.env.NODE_ENV !== 'production') {
         console.warn(...params);
     }
 }
@@ -32,7 +31,7 @@ export function warn(...params: any[]): void {
  * @return {Void}
  */
 export function error(...params: any[]): void {
-    if (notProd()) {
+    if (process.env.NODE_ENV !== 'production') {
         console.error(...params);
     }
 }
@@ -43,8 +42,8 @@ export function error(...params: any[]): void {
  * @param {String} content 需要输出的内容，必须是字符串
  * @return {Void}
  */
-export function alert(title: string, content: string): void {
-    if (notProd()) {
+export function poplog(title: string, content: string): void {
+    if (process.env.NODE_ENV !== 'production') {
         Taro.showModal({
             title,
             content
@@ -52,3 +51,24 @@ export function alert(title: string, content: string): void {
     }
 }
 
+/**
+ * 启动计时器
+ * 
+ * @param {string} name 计时的名称
+ */
+export function start(name?: string) {
+    if (process.env.NODE_ENV !== 'production') {
+        console.time(name);
+    }
+}
+
+/**
+ * 结束计时器，并打印计时结果
+ * 
+ * @param {string} name 计时的名称
+ */
+export function end(name?: string) {
+    if (process.env.NODE_ENV !== 'production') {
+        console.timeEnd(name);
+    }
+}

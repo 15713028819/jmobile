@@ -3,7 +3,7 @@ import Taro, { Component, Config } from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
 import { observer, inject } from '@tarojs/mobx';
 
-export default class JM2Page extends Component {
+export default class Parent extends Component {
     [x: string]: any;
     
     /**

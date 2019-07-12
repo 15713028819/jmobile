@@ -11,7 +11,7 @@ export function time10(datetime?: string): number {
 /**
  * 获取13位时间戳
  * 
- * @param {String} 需要转换的时间字符串，不传时使用当前时间
+ * @param {String} datetime 需要转换的时间字符串，不传时使用当前时间
  */
 export function time13(datetime?: string): number {
     let date: any = datetime ? new Date(datetime) : new Date();

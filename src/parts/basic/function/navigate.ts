@@ -1,3 +1,5 @@
+import Taro from '@tarojs/taro';
+import { queryJoin } from './queryString';
 
 /**
  * 页面Navigate跳转
@@ -6,7 +8,7 @@
  */
 export const navigate = (url: string, params?: object): void => {
     Taro.navigateTo({
-        url: querystring.join(url, params || {})
+        url: queryJoin(url, params || {})
     });
 }
 
@@ -17,7 +19,7 @@ export const navigate = (url: string, params?: object): void => {
  */
 export const redirect = (url: string, params?: object): void => {
     Taro.redirectTo({
-        url: querystring.join(url, params || {})
+        url: queryJoin(url, params || {})
     });
 }
 
@@ -39,7 +41,7 @@ export const switchTab = (url: string): void => {
  */
 export const relaunch = (url: string, params?: object): void => {
     Taro.reLaunch({
-        url: querystring.join(url, params || {})
+        url: queryJoin(url, params || {})
     });
 }
 
@@ -48,7 +50,7 @@ export const relaunch = (url: string, params?: object): void => {
  * 
  * @param {Number} delta 返回的步数
  */
-export const navigateBack = (delta: number): void => {
+export const goback = (delta: number): void => {
     Taro.navigateBack({
         delta
     });

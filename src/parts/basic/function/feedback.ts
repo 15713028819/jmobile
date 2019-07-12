@@ -41,7 +41,7 @@ export function loading(title = '加载中', mask = false): void {
 /**
  * 隐藏加载框
  */
-export function loaddingHide(): void {
+export function loadingHide(): void {
     Taro.hideLoading();
 }
 
@@ -51,7 +51,7 @@ export function loaddingHide(): void {
  * @param {string} title 标题
  * @param {string} content 内容
  */
-export function modal(title: string, content: string): void {
+export function alert(title: string, content: string): void {
     Taro.showModal({
         title,
         content,

@@ -19,19 +19,11 @@ export function nonce(type: 'char' | 'number' | 'mixed', length = 4): string {
     return result;
 }
 
-export function random() {
-
+/**
+ * 获取0-N的随机数
+ * 
+ * @param {number} max 随机数最大值
+ */
+export function random(max: number) {
+    return Math.round(Math.random() * parseInt(max.toString()));
 }
-
-export function qrcode() {
-
-}
-
-export function canvas() {
-    
-}
-
-// ----------------------------------------------------------------------------
-// 私有部分
-// ----------------------------------------------------------------------------
-

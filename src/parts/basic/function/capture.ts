@@ -1,11 +1,12 @@
-import Taro from 'tarojs/taro';
+import Taro from '@tarojs/taro';
+
 
 /**
  * 返回系统信息
  * 
  * @see https://nervjs.github.io/taro/docs/apis/device/systeminfo/getSystemInfoSync.html
  */
-export const getSystemInfo = (): object => {
+export const systemInfo = (): object => {
     return Taro.getSystemInfoSync();
 }
 
@@ -16,12 +17,12 @@ export const getSystemInfo = (): object => {
  * 
  * @see https://nervjs.github.io/taro/docs/apis/device/netstat/getNetworkType.html
  */
-export const getNetworkType = (callback: Function): void => {
+export const networkType = (callback: Function): void => {
     Taro.getNetworkType()
     .then((res)=> {
         callback(res);
     })
     .catch((err)=> {
-        error('Capture.getNetworkType(): ', err);
+        callback(err);
     })
 }
