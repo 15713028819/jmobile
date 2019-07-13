@@ -5,7 +5,7 @@
  * @param {String} str 需要加密的源字符串
  * @return {String}
  */
-export function enBase64(str: string): string {
+export function base64Encode(str: string): string {
     let c1, c2, c3;
     let base64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
     let i = 0, len = str.length, strin = '';
@@ -40,7 +40,7 @@ export function enBase64(str: string): string {
  * @param {String} str 需要解密的源字符串
  * @return {String}
  */
-export function deBase64 (str: string): string { // 解码，配合decodeURIComponent使用
+export function base64Decode (str: string): string { // 解码，配合decodeURIComponent使用
     var base64EncodeChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
     var output = "";
     var chr1, chr2, chr3;
@@ -71,7 +71,7 @@ export function deBase64 (str: string): string { // 解码，配合decodeURIComp
  * 
  * @param {String} str 需要编码的源字符串
  */
-export function enUrl (str: string): string {
+export function urlEncode (str: string): string {
     return encodeURIComponent(str);
 }
 
@@ -80,7 +80,7 @@ export function enUrl (str: string): string {
  * 
  * @param {String} str 需要解码的源字符串
  */
-export function deUrl (str: string): string {
+export function urlDecode (str: string): string {
     return decodeURIComponent(str);
 }
 

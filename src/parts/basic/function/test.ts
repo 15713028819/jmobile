@@ -56,7 +56,7 @@ export function poplog(title: string, content: string): void {
  * 
  * @param {string} name 计时的名称
  */
-export function start(name?: string) {
+export function time(name?: string) {
     if (process.env.NODE_ENV !== 'production') {
         console.time(name);
     }
@@ -67,7 +67,7 @@ export function start(name?: string) {
  * 
  * @param {string} name 计时的名称
  */
-export function end(name?: string) {
+export function timeEnd(name?: string) {
     if (process.env.NODE_ENV !== 'production') {
         console.timeEnd(name);
     }
